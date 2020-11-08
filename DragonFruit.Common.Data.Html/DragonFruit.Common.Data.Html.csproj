@@ -8,7 +8,6 @@
     <Copyright>Copyright 2020 (C) DragonFruit Network</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html/license.md</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>dragonfruit, data, htmlagilitypack, apiclient, apirequest</PackageTags>

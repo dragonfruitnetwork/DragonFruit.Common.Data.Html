@@ -2,6 +2,7 @@
 
 ![NuGet Publishing](https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html/workflows/Publish/badge.svg)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8d6e2cfb55449099204fb2208e07a26)](https://app.codacy.com/gh/dragonfruitnetwork/DragonFruit.Common.Data.Html?utm_source=github.com&utm_medium=referral&utm_content=dragonfruitnetwork/DragonFruit.Common.Data.Html&utm_campaign=Badge_Grade)
 [![NuGet](https://img.shields.io/nuget/v/DragonFruit.Common.Data.Html)](https://www.nuget.org/packages/Dragon6.API/)
 [![Nuget](https://img.shields.io/nuget/dt/DragonFruit.Common.Data.Html)](https://www.nuget.org/packages/Dragon6.API/)
 ![GitHub](https://img.shields.io/github/license/dragonfruitnetwork/DragonFruit.Common.Data.Html)

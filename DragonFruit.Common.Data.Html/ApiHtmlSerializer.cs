@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using DragonFruit.Common.Data.Html.Internal;
 using DragonFruit.Common.Data.Serializers;
 using HtmlAgilityPack;

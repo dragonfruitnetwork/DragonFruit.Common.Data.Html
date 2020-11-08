@@ -9,7 +9,6 @@
     <Description>HTML parsing via HtmlAgilityPack for the DragonFruit Data Library</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html/license.md</PackageLicenseUrl>
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

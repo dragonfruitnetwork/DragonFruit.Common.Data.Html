@@ -6,6 +6,7 @@
     <Authors>DragonFruit Network</Authors>
     <Title>DragonFruit.Common.Data.Html</Title>
     <Copyright>Copyright 2020 (C) DragonFruit Network</Copyright>
+    <Description>HTML parsing via HtmlAgilityPack for the DragonFruit Data Library</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/dragonfruitnetwork/DragonFruit.Common.Data.Html/license.md</PackageLicenseUrl>

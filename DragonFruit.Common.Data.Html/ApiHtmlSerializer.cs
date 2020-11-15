@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Net.Http;
-using System.Threading.Tasks;
 using DragonFruit.Common.Data.Html.Internal;
 using DragonFruit.Common.Data.Serializers;
 using HtmlAgilityPack;
@@ -29,15 +28,14 @@ namespace DragonFruit.Common.Data.Html
 
         public StringContent Serialize<T>(T input) where T : class => _baseSerializer.Serialize(input);
 
-        public T Deserialize<T>(Task<Stream> input) where T : class
+        public T Deserialize<T>(Stream input) where T : class
         {
             if (typeof(T) != typeof(HtmlDocument))
             {
                 return _baseSerializer.Deserialize<T>(input);
             }
 
-            using var stream = input.Result;
-            return HtmlDocumentLoader.LoadFromStream(stream) as T;
+            return HtmlDocumentLoader.LoadFromStream(input) as T;
         }
     }
 }

@@ -23,8 +23,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="DragonFruit.Common.Data" Version="2020.925.12" />
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.27" />
+    <PackageReference Include="DragonFruit.Common.Data" Version="2020.1114.19" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.28" />
   </ItemGroup>
 
 </Project>

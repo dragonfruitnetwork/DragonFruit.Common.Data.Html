@@ -18,12 +18,7 @@ jobs:
       - name: Build
         run: |
           dotnet restore
-          dotnet build -c Release
+          dotnet build -c Debug
 
       - name: Unit Tests
         run: dotnet test
-        
-      - name: Demo App
-        run: |
-          cd DragonFruit.Common.Data.Html
-          dotnet run

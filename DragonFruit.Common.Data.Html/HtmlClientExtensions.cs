@@ -22,25 +22,35 @@ namespace DragonFruit.Common.Data.Html
         /// <summary>
         /// Extracts a value from the <see cref="HtmlNode"/> based on its XPath and attribute name
         /// </summary>
-        public static string GetValueFromXPath(this HtmlNode node, string xpath, string attribute)
+        public static string GetValueFromXPath(this HtmlNode node, string xpath = default, string attribute = default)
         {
-            return node.SelectSingleNode(xpath).Attributes.Single(x => x.Name.Equals(attribute, StringComparison.OrdinalIgnoreCase)).Value;
+            return node.GetValue(xpath, attribute, true);
         }
 
         /// <summary>
         /// Extracts a value (or returns a default value) from the <see cref="HtmlNode"/> based on its XPath and attribute name
         /// </summary>
-        public static string GetValueOrDefaultFromXPath(this HtmlNode node, string xpath, string attribute)
+        public static string GetValueOrDefaultFromXPath(this HtmlNode node, string xpath = default, string attribute = default)
         {
-            return node.SelectSingleNode(xpath).Attributes.SingleOrDefault(x => x.Name.Equals(attribute, StringComparison.OrdinalIgnoreCase))?.Value;
+            return node.GetValue(xpath, attribute, false);
         }
 
-        /// <summary>
-        /// Extracts the inner text/html from a XPath against the <see cref="HtmlNode"/> provided
-        /// </summary>
-        public static string GetValueFromXPath(this HtmlNode node, string xpath)
+        private static string GetValue(this HtmlNode node, string xpath, string attribute, bool throwOnNotFound)
         {
-            return node.SelectSingleNode(xpath).InnerText;
+            var subNode = string.IsNullOrEmpty(xpath) ? node : node.SelectSingleNode(xpath);
+            var useInnerText = string.IsNullOrEmpty(attribute);
+
+            switch (useInnerText)
+            {
+                case false when throwOnNotFound:
+                    return subNode.Attributes.Single(x => x.Name.Equals(attribute, StringComparison.OrdinalIgnoreCase)).Value;
+
+                case false:
+                    return subNode.Attributes.SingleOrDefault(x => x.Name.Equals(attribute, StringComparison.OrdinalIgnoreCase))?.Value;
+
+                case true:
+                    return subNode.InnerText;
+            }
         }
     }
 }

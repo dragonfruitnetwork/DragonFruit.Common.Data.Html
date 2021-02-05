@@ -22,7 +22,7 @@ namespace DragonFruit.Common.Data.Html
         /// <summary>
         /// Extracts a value from the <see cref="HtmlNode"/> based on its XPath and attribute name
         /// </summary>
-        public static string GetValueFromXPath(this HtmlNode node, string xpath = default, string attribute = default, bool throwOnNotFound = false)
+        public static string GetValue(this HtmlNode node, string xpath = default, string attribute = default, bool throwOnNotFound = false)
         {
             var subNode = string.IsNullOrEmpty(xpath) ? node : node.SelectSingleNode(xpath);
             var useInnerText = string.IsNullOrEmpty(attribute);

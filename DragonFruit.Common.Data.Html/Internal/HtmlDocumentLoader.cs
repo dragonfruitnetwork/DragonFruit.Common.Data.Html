@@ -13,7 +13,15 @@ namespace DragonFruit.Common.Data.Html.Internal
         {
             var document = new HtmlDocument();
 
-            document.Load(input, encoding ?? Encoding.Default);
+            if (encoding != null)
+            {
+                document.Load(input, encoding);
+            }
+            else
+            {
+                document.Load(input, true);
+            }
+
             return document;
         }
     }

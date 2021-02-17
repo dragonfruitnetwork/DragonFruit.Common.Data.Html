@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Net.Http;
+using System.Text;
 using DragonFruit.Common.Data.Html.Internal;
 using DragonFruit.Common.Data.Serializers;
 using HtmlAgilityPack;
@@ -13,15 +14,17 @@ namespace DragonFruit.Common.Data.Html
     public class ApiHtmlSerializer : ISerializer
     {
         private readonly ISerializer _baseSerializer;
+        private readonly Encoding _encoding;
 
-        public ApiHtmlSerializer()
-            : this(new ApiXmlSerializer())
+        public ApiHtmlSerializer(Encoding encoding = null)
+            : this(new ApiXmlSerializer(), encoding)
         {
         }
 
-        public ApiHtmlSerializer(ISerializer baseSerializer)
+        public ApiHtmlSerializer(ISerializer baseSerializer, Encoding encoding = null)
         {
             _baseSerializer = baseSerializer;
+            _encoding = encoding;
         }
 
         public string ContentType => _baseSerializer.ContentType;
@@ -35,7 +38,7 @@ namespace DragonFruit.Common.Data.Html
                 return _baseSerializer.Deserialize<T>(input);
             }
 
-            return HtmlDocumentLoader.LoadFromStream(input) as T;
+            return HtmlDocumentLoader.LoadFromStream(input, _encoding) as T;
         }
     }
 }

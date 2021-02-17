@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using DragonFruit.Common.Data.Html.Internal;
 using HtmlAgilityPack;
 
@@ -10,13 +11,13 @@ namespace DragonFruit.Common.Data.Html
         /// <summary>
         /// Performs a <see cref="ApiRequest"/>, returning the result as a <see cref="HtmlDocument"/>
         /// </summary>
-        public static HtmlDocument PerformHtml<TClient>(this TClient client, ApiRequest request) where TClient : ApiClient
+        public static HtmlDocument PerformHtml<TClient>(this TClient client, ApiRequest request, Encoding encoding = null) where TClient : ApiClient
         {
             using var response = client.Perform(request);
             response.EnsureSuccessStatusCode();
 
             using var stream = response.Content.ReadAsStreamAsync().Result;
-            return HtmlDocumentLoader.LoadFromStream(stream);
+            return HtmlDocumentLoader.LoadFromStream(stream, encoding);
         }
 
         /// <summary>

@@ -18,7 +18,7 @@ namespace DragonFruit.Common.Data.Html.Tests
             var htmlDocument = _serializerClient.Perform<HtmlDocument>(new HtmlPageRequest());
             var title = htmlDocument.DocumentNode.GetValue("/html/body/div/h1[1]/a");
 
-            Assert.AreEqual(title, "Certification");
+            Assert.AreEqual(title, "certification");
         }
     }
 }
